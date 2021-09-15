@@ -1,0 +1,85 @@
+@include before_minus
+@include before_plus
+@include after_plus
+
+.similar
+    padding: 72px 80px
+
+.title
+    font-size: 24px
+    line-height: 28px
+    color: #3D3D3D
+
+.wrapper
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+
+.discount
+    color: $main-red !important
+    position: relative
+    @include before_discount
+    @include after_discount
+
+.similar__item
+    max-width: 305px
+    margin-top: 50px
+    &_basket
+        margin-top: 20px
+        display: flex
+        align-items: center
+        justify-content: center
+    &_img
+        position: relative
+        display: flex
+        flex-direction: column
+        align-items: center
+        min-height: 240px
+        i
+            cursor: pointer
+            position: absolute
+            right: 0
+    &_price
+        margin-top: 20px
+        font-weight: 500
+        font-size: 20px
+        line-height: 24px
+        color: #141414
+    &_descr
+        display: block
+        min-height: 60px
+        text-decoration: none
+        margin-top: 8px
+        font-size: 16px
+        line-height: 20px
+        color: #525252
+    &_descr:hover
+        cursor: pointer
+        color: $main-blue
+    &_btn
+        margin: 0 auto
+        padding: 12px 40px
+        max-width: 156px
+        background: $main-blue
+        border-radius: 3px
+        margin-top: 20px
+        a
+            text-decoration: none
+            color: $white
+
+.like
+    color: red
+
+.count
+    padding: 0px 17px
+
+.count-btn
+    position: relative
+    cursor: pointer
+    border: none
+    outline: none
+    min-width: 44px
+    min-height: 44px
+    background: $white
+    border-radius: 3px

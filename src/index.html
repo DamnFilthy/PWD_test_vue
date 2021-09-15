@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/06fc86963f.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>PWD test</title>
+</head>
+
+<body>
+    <section class="similar">
+        <div class="title">С этим товаром покупают</div>
+        <div class="wrapper" id="goodsCounter">
+            <div class="similar__item" v-for="(card, index) in cards">
+                <div class="similar__item_img">
+                    <img :src="card.img" alt="image">
+                    <i class="far fa-heart fa-lg" id="heart"></i>
+                </div>
+                <div class="similar__item_price" :class="card.discount ? 'discount' : ' ' ">{{card.price}} ₽</div>
+                <a href="#" class="similar__item_descr">
+                    {{card.descr}}
+                </a>
+                <div v-if="card.showBtn" class="similar__item_btn" @click.prevent="hideBtn(index)">
+                    <a href="#">В корзину</a>
+                </div>
+                <div v-if="card.showCounter" class="similar__item_basket">
+                    <button class="count-btn minus" @click.prevent="minusGood(index)"></button>
+                    <div class="count">{{card.count}}</div>
+                    <button class="count-btn plus" @click.prevent="plusGood(index)"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/goodsCounter.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,45 @@
+@mixin before_minus
+    .minus:before
+        position: absolute
+        content: ""
+        height: 2px
+        width: 15px
+        transform: translateX(-7px)
+        background: #1A45DB
+
+@mixin before_plus
+    .plus:before
+        position: absolute
+        content: ""
+        height: 2px
+        width: 15px
+        transform: translateX(-7px)
+        background: $main-blue
+
+@mixin after_plus
+    .plus:after
+        position: absolute
+        content: ""
+        height: 2px
+        width: 15px
+        transform: translate(-7px, 0px) rotate(90deg)
+        background: $main-blue
+
+@mixin before_discount
+    &:before
+        content: ""
+        height: 1px
+        width: 41px
+        background-color: $main-red
+        position: absolute
+        transform: rotate(346deg)
+        right: 66%
+        top: 12px
+
+@mixin after_discount
+    &:after
+        color: #8F8F8F
+        content: "540 ₽"
+        font-size: 16px
+        line-height: 20px
+        margin-left: 10px
